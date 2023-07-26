@@ -1,0 +1,48 @@
+This is the summary of information found and
+ research done on the BYD HVM Battery and Sungrow SH5.0RS Inverter.
+
+Datalog of BYD HVM8.3 to SH5.0RS CAN BUS Communication.
+
+Created DBC file to read values from datalog files.
+
+Summary of Communications:
+Bit-Rate 500,000
+8 byte data
+		Polling Message ofID 0x00004200 02 00 00 00 00 00 00 00 
+On startup Inverter sends message ID 0x151 00 53 55 4e 47 52 4f 57 .SUNGROW ASC11
+				     0x151 01 00 00 00 00 00 00 00
+		     BYD reply is ID 0x250 03 14 00 33 00 53 03 09 ...3.S..
+				     0x290 0c 66 25 9a 00 00 00 00 .f%.....
+                                     0x2d0 00 42 59 44 00 00 00 00 .BYD....
+                                     0x3d0 00 42 61 74 74 65 72 79 .Battery
+				     0x3d0 01 2d 42 6f 78 20 50 72 .-Box Pr
+				     0x3d0 02 65 6d 69 75 6d 20 48 .emium H
+				     0x3d0 03 56 4d 00 00 00 00 00 .VM.....	
+
+This link documents the start up of the BYD HVS.
+https://github.com/SunshadeCorp/can-service/blob/master/can_byd_sim.py
+Note: ID 0x250 and 0x290 are unknown data at this time.
+
+This link documents the BYD startup.
+https://github.com/dalathegreat/BYD-Battery-Emulator-For-Gen24/blob/main/Software/BYD-CAN.cpp
+
+This link documents the BYD messages:
+https://github.com/SunshadeCorp/can-service/blob/master/config.yaml 
+
+battery
+├─ 0x1d0 2: current {positive = charge, negative = discharge}
+├─ 0x210 0: max_cell_temp
+├─ 0x210 2:min_cell_temp
+├─ 0x150 0: soc
+├─ 0x150 2: soh
+├─ 0x1d0 4:temp
+└─ 0x1d0 0:voltage
+inverter
+├─ 0x091 0: battery_voltage (read only)
+├─ 0x0d1 0: soc (read only)
+└─ 0x111 0-4: timestamp (read only)
+battery limits 0x110
+├─ 6: max_charge_current
+├─ 4: max_discharge_current
+├─ 0: max_voltage
+└─ 2: min_voltage
