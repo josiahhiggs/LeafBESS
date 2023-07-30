@@ -1,0 +1,7 @@
+https://secondlifestorage.com/index.php?threads/can-and-rs485-bms-emulated-protocols-for-diy-battery-to-work-with-lv-and-hv-invertors-jk-bms-jbd-daly-123smart-oem-battery.12440/
+https://foxesscommunity.com/viewtopic.php?t=164
+https://github.com/rand12345/solax_can_bus
+https://github.com/burra/byd_battery
+https://github.com/dalathegreat/byd_battery
+https://secondlifestorage.com/index.php?threads/three-phase-hv-hybrid-inverter-solax-x3-hybrid-8-0-solax-triple-power-t58-hv-battery.10747/#post-75108
+https://github.com/Uksa007/esphome-jk-bms-can
